@@ -1,0 +1,53 @@
+﻿<Page x:Class="VetClinikWPF.Pages.ChooseUsersPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:VetClinikWPF.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ChooseUsersPage">
+    <Page.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.3,0">
+            <GradientStop Color="#f5f4f0" Offset="1"/>
+            <GradientStop Color="#0086ff" />
+        </LinearGradientBrush>
+    </Page.Background>
+    <Page.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Width" Value="266"/>
+            <Setter Property="Height" Value="450"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#0047AB"/>
+                    <Setter Property="Foreground" Value="Aqua"/>
+                    <Setter Property="Cursor" Value="Hand" />
+
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <!-- Style Button-->
+
+    </Page.Resources>
+    <Grid>
+        <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Click="ButtonClick_Click">Регистратор</Button>
+            <Button Click="ButtonClick_Click">Ветеринар</Button>
+            <Button Click="ButtonClick_Click">Администратор</Button>
+        </StackPanel>
+        <TextBlock Margin="0 20 0 0" Style="{StaticResource TitleText}" VerticalAlignment="Top" HorizontalAlignment="Center"> Выберите кем регистрируетесь</TextBlock>
+
+    </Grid>
+</Page>
